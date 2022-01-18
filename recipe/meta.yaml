@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-katex" %}
-{% set version = "3.2.2" %}
+{% set version = "3.3.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyterlab-katex-{{ version }}.tar.gz
-  sha256: 326a16ba40fe034272119e22f3b5313d4d1bf046a1630e6ca318dc484a46b6b3
+  sha256: ba3cd015b92cbc4d5e06dd467e1fb15cd983616c7a0327aae6a5fb4c82c813f3
 
 build:
   number: 0
@@ -21,7 +21,6 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - jupyterlab ~=3.0
     - python >=3.6
 
 test:
