@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-katex" %}
-{% set version = "3.3.0" %}
+{% set version = "3.4.0" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyterlab-katex-{{ version }}.tar.gz
-  sha256: ba3cd015b92cbc4d5e06dd467e1fb15cd983616c7a0327aae6a5fb4c82c813f3
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: f7a804c7074c1a07adff4900051aa8eaa7a2ecb91e7588a9d2d83a38a6588113
 
 build:
   number: 0
@@ -17,7 +17,10 @@ build:
 
 requirements:
   host:
-    - jupyter-packaging >=0.7.9,<0.8.0
+    - hatch-jupyter-builder >=0.5
+    - hatch-nodejs-version
+    - hatchling >=1.5.0
+    - jupyterlab >=4,<5
     - pip
     - python >=3.6
   run:
@@ -35,7 +38,9 @@ about:
   home: https://github.com/jupyterlab/jupyter-renderers
   summary: KaTeX math renderer for JupyterLab
   license: BSD-3-Clause
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - jupyterlab_katex/labextension/static/third-party-licenses.json
 
 extra:
   recipe-maintainers:
